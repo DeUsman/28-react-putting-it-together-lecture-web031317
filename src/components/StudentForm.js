@@ -6,6 +6,7 @@ export default class StudentForm extends React.Component {
 
   constructor(props){
     super()
+    console.log(props)
     this.state = { student: ''}
 
     this.handleInputChange = this.handleInputChange.bind(this)
@@ -28,9 +29,8 @@ export default class StudentForm extends React.Component {
   }
 
   render(){
-    count += 1
-    console.log('Render called in Form for the ' + count)
-    console.log(this.props)
+   
+    //console.log(this.props)
     return (
       <form onSubmit={this.handleSubmit.bind(this)}>
         <label>Student Name</label>

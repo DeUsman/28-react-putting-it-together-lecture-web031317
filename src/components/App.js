@@ -3,6 +3,7 @@ import React from 'react'
 import NavBar from './NavBar'
 import StudentList from './StudentList'
 import StudentForm from './StudentForm'
+import Blink from './blink'
 
 class App extends React.Component {
 
@@ -13,17 +14,22 @@ class App extends React.Component {
     }
   }
 
+
   handleAddDog(){
     // BAD =- should use the function form
     this.setState({names: [...this.state.names, "Fido"]})
   }
 
+
   handleAddStudent(name){
+    console.log('inside handleAddStudent', this)
     this.setState( prevState =>  ({ names: [...prevState.names, name] }) )
   }
 
+
   render(){
     console.log('render called in App!')
+
     return (
       <div>
           < NavBar color='black' title={`Listing out ${this.state.names.length} really cool students`} />
